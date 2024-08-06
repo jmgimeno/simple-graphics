@@ -1,4 +1,4 @@
-package org.academiadecodigo.simplegraphics.keyboard;
+package com.codeforall.online.simplegraphics.keyboard;
 
 import java.awt.event.KeyEvent;
 

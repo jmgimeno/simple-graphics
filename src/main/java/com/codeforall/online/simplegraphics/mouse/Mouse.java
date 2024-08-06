@@ -1,9 +1,4 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
-package org.academiadecodigo.simplegraphics.mouse;
+package com.codeforall.online.simplegraphics.mouse;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -11,7 +6,8 @@ import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import org.academiadecodigo.simplegraphics.graphics.Canvas;
+import com.codeforall.online.simplegraphics.graphics.Canvas;
+
 
 public class Mouse implements MouseListener, MouseMotionListener {
     MouseHandler handler;
@@ -39,7 +35,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
             while(var2.hasNext()) {
                 MouseEventType var3 = (MouseEventType)var2.next();
                 if (var3 == MouseEventType.MOUSE_CLICKED) {
-                    this.handler.mouseClicked(new org.academiadecodigo.simplegraphics.mouse.MouseEvent((double)var1.getX(), (double)var1.getY(), MouseEventType.MOUSE_CLICKED));
+                    this.handler.mouseClicked(new com.codeforall.online.simplegraphics.mouse.MouseEvent((double)var1.getX(), (double)var1.getY(), MouseEventType.MOUSE_CLICKED));
                 }
             }
         }
@@ -53,7 +49,7 @@ public class Mouse implements MouseListener, MouseMotionListener {
             while(var2.hasNext()) {
                 MouseEventType var3 = (MouseEventType)var2.next();
                 if (var3 == MouseEventType.MOUSE_MOVED) {
-                    this.handler.mouseMoved(new org.academiadecodigo.simplegraphics.mouse.MouseEvent((double)var1.getX(), (double)var1.getY(), MouseEventType.MOUSE_MOVED));
+                    this.handler.mouseMoved(new com.codeforall.online.simplegraphics.mouse.MouseEvent((double)var1.getX(), (double)var1.getY(), MouseEventType.MOUSE_MOVED));
                 }
             }
         }

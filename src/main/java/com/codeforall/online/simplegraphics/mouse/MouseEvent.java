@@ -1,9 +1,4 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
-package org.academiadecodigo.simplegraphics.mouse;
+package com.codeforall.online.simplegraphics.mouse;
 
 public class MouseEvent {
     private double x;

@@ -1,7 +1,6 @@
-package org.academiadecodigo.simplegraphics.graphics;
+package com.codeforall.online.simplegraphics.graphics;
 
-public class Color
-{
+public class Color {
     private int red;
     private int green;
     private int blue;

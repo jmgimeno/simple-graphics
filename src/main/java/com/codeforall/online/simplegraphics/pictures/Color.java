@@ -1,7 +1,7 @@
-package org.academiadecodigo.simplegraphics.pictures;
+package com.codeforall.online.simplegraphics.pictures;
 
-public class Color
-{
+public class Color {
+
     private int red;
     private int green;
     private int blue;
@@ -12,8 +12,7 @@ public class Color
      * @param green the green value of the color (between 0 and 255)
      * @param blue the blue value of the color (between 0 and 255)
      */
-    public Color(int red, int green, int blue)
-    {
+    public Color(int red, int green, int blue) {
         this.red = red;
         this.green = green;
         this.blue = blue;

@@ -1,4 +1,4 @@
-package org.academiadecodigo.simplegraphics.mouse;
+package com.codeforall.online.simplegraphics.mouse;
 
 public enum MouseEventType {
     MOUSE_CLICKED,

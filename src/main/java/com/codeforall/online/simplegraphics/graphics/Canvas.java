@@ -1,4 +1,4 @@
-package org.academiadecodigo.simplegraphics.graphics;
+package com.codeforall.online.simplegraphics.graphics;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
