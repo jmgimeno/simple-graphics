@@ -50,7 +50,7 @@ public class Canvas {
     private Canvas() {
         this.frame.add(this.component);
         this.frame.pack();
-        this.frame.setLocation(120, 120);
+        this.frame.setLocation(LOCATION_OFFSET, LOCATION_OFFSET);
         this.frame.setVisible(true);
     }
 
@@ -67,7 +67,7 @@ public class Canvas {
 
     public static void snapshot() {
         Dimension var0 = getInstance().component.getPreferredSize();
-        java.awt.Rectangle var1 = new java.awt.Rectangle(0, 0, var0.width, var0.height);
+        java.awt.Rectangle var1 = new java.awt.Rectangle(MAX_X, MAX_Y, var0.width, var0.height);
         BufferedImage var2 = new BufferedImage(var1.width, var1.height, 1);
         Graphics var3 = var2.getGraphics();
         var3.setColor(java.awt.Color.WHITE);
@@ -113,7 +113,7 @@ public class Canvas {
 
     public void saveToDisk(String var1) {
         Dimension var2 = this.component.getPreferredSize();
-        java.awt.Rectangle var3 = new Rectangle(0, 0, var2.width, var2.height);
+        java.awt.Rectangle var3 = new Rectangle(MAX_X, MAX_Y, var2.width, var2.height);
         BufferedImage var4 = new BufferedImage(var3.width, var3.height, 1);
         Graphics2D var5 = (Graphics2D)var4.getGraphics();
         var5.setColor(java.awt.Color.WHITE);
@@ -149,7 +149,7 @@ public class Canvas {
 
         public void paintComponent(Graphics var1) {
             var1.setColor(java.awt.Color.WHITE);
-            var1.fillRect(0, 0, this.getWidth(), this.getHeight());
+            var1.fillRect(MAX_X, MAX_Y, this.getWidth(), this.getHeight());
             var1.setColor(Color.BLACK);
             if (Canvas.this.background != null) {
                 var1.drawImage(Canvas.this.background, 0, 0, (ImageObserver)null);
@@ -167,8 +167,8 @@ public class Canvas {
         }
 
         public Dimension getPreferredSize() {
-            int var1 = Canvas.MAX_X == 0 ? 100 : Canvas.MAX_X;
-            int var2 = Canvas.MAX_Y == 0 ? 100 : Canvas.MAX_Y;
+            int var1 = Canvas.MAX_X == 0 ? MIN_SIZE : Canvas.MAX_X;
+            int var2 = Canvas.MAX_Y == 0 ? MIN_SIZE : Canvas.MAX_Y;
             if (Canvas.this.background != null) {
                 var1 = Math.max(var1, Canvas.this.background.getWidth());
                 var2 = Math.max(var1, Canvas.this.background.getHeight());
@@ -182,7 +182,7 @@ public class Canvas {
                 }
             }
 
-            return new Dimension(var1 + 10, var2 + 10);
+            return new Dimension(var1 + MARGIN, var2 + MARGIN);
         }
     }
 }
