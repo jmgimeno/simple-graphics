@@ -21,10 +21,10 @@ import java.util.Iterator;
  */
 public class Canvas {
     private static final int MIN_SIZE = 100;
-    private static int MAX_X = 0;
-    private static int MAX_Y = 0;
     private static final int MARGIN = 10;
     private static final int LOCATION_OFFSET = 120;
+    private static int MAX_X = 0;
+    private static int MAX_Y = 0;
     private static Canvas canvas = new Canvas();
     private ArrayList<Shape> shapes = new ArrayList();
     private BufferedImage background;
@@ -50,7 +50,7 @@ public class Canvas {
     private Canvas() {
         this.frame.add(this.component);
         this.frame.pack();
-        this.frame.setLocation(120, 120);
+        this.frame.setLocation(LOCATION_OFFSET, LOCATION_OFFSET);
         this.frame.setVisible(true);
     }
 
@@ -167,8 +167,8 @@ public class Canvas {
         }
 
         public Dimension getPreferredSize() {
-            int var1 = Canvas.MAX_X == 0 ? 100 : Canvas.MAX_X;
-            int var2 = Canvas.MAX_Y == 0 ? 100 : Canvas.MAX_Y;
+            int var1 = Canvas.MAX_X == 0 ? MIN_SIZE : Canvas.MAX_X;
+            int var2 = Canvas.MAX_Y == 0 ? MIN_SIZE : Canvas.MAX_Y;
             if (Canvas.this.background != null) {
                 var1 = Math.max(var1, Canvas.this.background.getWidth());
                 var2 = Math.max(var1, Canvas.this.background.getHeight());
@@ -182,7 +182,7 @@ public class Canvas {
                 }
             }
 
-            return new Dimension(var1 + 10, var2 + 10);
+            return new Dimension(var1 + MARGIN, var2 + MARGIN);
         }
     }
 }
